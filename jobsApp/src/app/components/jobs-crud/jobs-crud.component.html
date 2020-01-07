@@ -1,0 +1,17 @@
+<div class="example-container">
+  <form [formGroup]="formGroup" class="form">
+    <mat-form-field>
+      <label>
+        <input matInput placeholder="Title" formControlName="title">
+      </label>
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <label>
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+      </label>
+    </mat-form-field>
+    <br/>
+    <button mat-raised-button color="primary" class="login" (click)="save()">Save</button>
+  </form>
+</div>

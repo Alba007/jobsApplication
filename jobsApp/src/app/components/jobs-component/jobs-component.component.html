@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef>Title</th>
+    <td mat-cell *matCellDef="let dataSource"> {{dataSource.title}} </td>
+  </ng-container>
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef>Description</th>
+    <td mat-cell *matCellDef="let datasource"> {{datasource.description}} </td>
+  </ng-container>
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let datasource">
+      <button *ngIf="showActions" (click)="editJob(datasource)">Edit</button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="delete" >
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let datasource">
+      <button *ngIf="showActions" (click)="editJob(null)">Delete</button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+<mat-paginator (page)="handlePage($event)"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="pageSizeOptions">
+</mat-paginator>

@@ -1,0 +1,6 @@
+<div class="topnav">
+  <div class="div" (click)="goToApp()" >Applications</div>
+  <div class="div" (click)="goToJobs()" *ngIf="!isUser">Jobs</div>
+  <div class="div" (click)="goToProfile()" *ngIf="isUser">Profile</div>
+  <div class="logout" (click)="logout()">Logout</div>
+</div>
